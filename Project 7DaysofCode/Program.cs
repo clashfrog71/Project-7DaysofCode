@@ -10,22 +10,31 @@ public class program
         var request = new RestRequest("", Method.Get);
         var response = await client.ExecuteAsync(request);
         TestObject Json = JsonSerializer.Deserialize<TestObject>(response.Content);
-        Console.WriteLine(Json.count);
+       Json.contador();
         foreach (var item in Json.results)
         {
-            Console.WriteLine(item.name);
+           item.ExibirPokemon();
         }
     }
 }
-class TestObject
+public class TestObject
 {
     public int count { get; set; }
-    public List<pokemon> results { get; set; }
+        public List<pokemon> results { get; set; }
+        public void contador()
+        {
+            Console.WriteLine($"Total de pokemons: {this.count}");
+        }
 
 }
-class pokemon
+public class pokemon
 {
     public string name { get; set; }
     public string url { get; set; }
+    public void ExibirPokemon()
+    {
+        Console.WriteLine($"Nome: {this.name}");
+        Console.WriteLine($"Url: {this.url}");
+    }
 }
 
