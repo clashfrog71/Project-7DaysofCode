@@ -10,7 +10,23 @@ public class program
         var request = new RestRequest("", Method.Get);
         var response = await client.ExecuteAsync(request);
         TestObject Json = JsonSerializer.Deserialize<TestObject>(response.Content);
-       Json.contador();
+        Console.WriteLine("Bem vindo ao desafio de 7 dias!");
+        Console.WriteLine("1: Adotar pokemon"); 
+        var resposta = Console.ReadLine();
+        if (int.TryParse(resposta, out int numero))
+        {
+            switch (numero)
+            {
+                case 1:
+                    funcoes.
+                    break;
+            }
+        }
+        else
+        {
+            Console.WriteLine("Número Invalido");
+        }
+        Json.contador();
         foreach (var item in Json.results)
         {
            item.ExibirPokemon();
@@ -35,6 +51,16 @@ public class pokemon
     {
         Console.WriteLine($"Nome: {this.name}");
         Console.WriteLine($"Url: {this.url}");
+    }
+}
+public class funcoes
+{
+    public async void AdotarPokemon()
+    {
+        var client = new RestClient("https://pokeapi.co/api/v2/pokemon/");
+        var request = new RestRequest("", Method.Get);
+        var response = await client.ExecuteAsync(request);
+        TestObject Json = JsonSerializer.Deserialize<TestObject>(response.Content);
     }
 }
 
