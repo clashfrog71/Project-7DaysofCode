@@ -9,13 +9,23 @@ public class program
         var client = new RestClient("https://pokeapi.co/api/v2/pokemon/");
         var request = new RestRequest("", Method.Get);
         var response = await client.ExecuteAsync(request);
-        var b = JsonSerializer.Deserialize<TestObject>(response.Content);
-        Console.WriteLine(b.count);
+        TestObject Json = JsonSerializer.Deserialize<TestObject>(response.Content);
+        Console.WriteLine(Json.count);
+        foreach (var item in Json.results)
+        {
+            Console.WriteLine(item.name);
+        }
     }
 }
 class TestObject
 {
     public int count { get; set; }
+    public List<pokemon> results { get; set; }
 
+}
+class pokemon
+{
+    public string name { get; set; }
+    public string url { get; set; }
 }
 
