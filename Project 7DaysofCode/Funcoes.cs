@@ -26,7 +26,16 @@ namespace Project_7DaysofCode
             Console.WriteLine("Qual seu nome?");
             var nome = Console.ReadLine();
             Jogador jogador = new Jogador(nome, pokemon);
+            funcoes.SalvarJogo(jogador);
+
         }
+        public static void SalvarJogo(Jogador jogador)
+        {
+            string caminho = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"..\\..\\..\\{jogador.Nome}.json");
+            var jogadorSerializado = JsonSerializer.Serialize(jogador);
+            File.WriteAllText(caminho, jogadorSerializado);
+        }
+        
     }public static class Menu
     {
         public static void ExibirMenu()
