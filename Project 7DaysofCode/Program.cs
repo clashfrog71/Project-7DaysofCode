@@ -8,8 +8,11 @@ public class program
 {
     public static void Main()
     {
-        Inicio.inicio();
-        Console.WriteLine("a");
+        while (true)
+        {
+            Inicio.inicio();
+            Console.WriteLine("a");
+        }
         
     }
 }
