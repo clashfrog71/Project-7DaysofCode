@@ -4,7 +4,6 @@ namespace Project_7DaysofCode;
 
 public static class funcoes
 {
-    
     public static async Task AdotarPokemon()
     {
         var response = await fazerConecao();
@@ -38,6 +37,5 @@ public static class funcoes
         var request = new RestRequest("", Method.Get);
         var response = await client.ExecuteAsync(request);
         return response;
-    }
-
+    }   
 }
