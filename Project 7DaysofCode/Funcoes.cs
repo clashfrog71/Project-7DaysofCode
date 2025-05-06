@@ -17,13 +17,15 @@ public static class funcoes
         var resposta = Console.ReadLine().ToLower();
         var oescolhido = Json.results.FirstOrDefault(p => p.name.ToLower() == resposta);
         Console.WriteLine($"você vai adotar o {oescolhido.name}");
+        oescolhido.ExibirPokemonInfoTotal();
         pokemon pokemon = new pokemon(oescolhido.name, oescolhido.url);
+        Task.Delay(500).Wait();
         Console.WriteLine("Qual seu nome?");
         var nome = Console.ReadLine();
-        oescolhido.ExibirPokemonInfoTotal();
-        Task.Delay(2000).Wait();
         Jogador jogador = new Jogador(nome, pokemon);
         funcoes.SalvarJogo(jogador);
+        Console.WriteLine("Json salvo com sucesso!");
+        Task.Delay(1000).Wait();
     }
     public static void SalvarJogo(Jogador jogador)
     {
