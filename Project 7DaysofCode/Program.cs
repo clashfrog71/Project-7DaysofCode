@@ -6,14 +6,9 @@ using System.Xml.Linq;
 
 public class program
 {
-    public static void Main()
+    public static async Task Main()
     {
-        while (true)
-        {
-            Inicio.inicio();
-            Console.WriteLine("a");
-        }
-        
+        await Inicio.MenuInicio();
     }
 }
 
