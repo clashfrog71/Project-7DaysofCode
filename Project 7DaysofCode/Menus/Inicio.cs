@@ -1,11 +1,10 @@
-﻿using Project_7DaysofCode;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_7DaysofCode.Jogo;
+namespace Project_7DaysofCode.Menus;
 
 public class Inicio
 {
@@ -15,13 +14,17 @@ public class Inicio
 
         Console.WriteLine("escolha uma das opções");
         Console.WriteLine("1: Adotar pokemon");
+        Console.WriteLine("2: Cuidar do pokemon");
         Console.WriteLine("0: sair");
         var resposta = Console.ReadLine();
 
         switch (resposta)
         {
             case "1":
-                await funcoes.AdotarPokemon();
+                await Funcoes.funcoes.AdotarPokemon();
+                break;
+            case "2":
+                await CuidarPokemon.MenuCuidarPokemon();
                 break;
             case "0":
                 Console.Clear();
