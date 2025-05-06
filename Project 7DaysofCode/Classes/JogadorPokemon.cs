@@ -8,7 +8,7 @@ namespace Project_7DaysofCode.Classes
 {
     public class JogadorPokemon
     {
-        Jogador jogador { get; set; }
-        pokemon pokemon { get; set; }
+       public string Nome { get; set; }
+       public pokemon pokemon { get; set; }
     }
 }
