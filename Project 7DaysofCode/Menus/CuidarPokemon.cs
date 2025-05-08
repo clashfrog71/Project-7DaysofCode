@@ -60,7 +60,7 @@ public class CuidarPokemon
                         Console.WriteLine($"exibindo informações do pokemon {jogador.Pokemon.name} de {jogador.Nome}");
                         Console.WriteLine($"Fome: {jogador.Pokemon.fome}");
                         Console.WriteLine($"Humor: {jogador.Pokemon.humor}");
-                        Console.WriteLine($"Idade: {DateTime.Now.Day - jogador.Pokemon.idade}");
+                        Console.WriteLine($"Idade: {DateTime.Now.Day - jogador.Pokemon.diaDeAdocao}");
                         Console.WriteLine("Aperte qualquer tecla para voltar");
                         Console.ReadLine();
                         break;
